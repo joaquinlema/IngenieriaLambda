@@ -49,6 +49,22 @@ public class TestLambda {
 		assertEquals(Funciones.minimo(vacia),0 );
 		assertEquals(Funciones.max(vacia),0 );
 		assertEquals(Funciones.maximo(vacia),0 );
+	}
+	
+	@Test
+	public void testduplicar() {
+		List<Integer> listaDup = Funciones.duplicar(miLista);
+		int uno = listaDup.get(0);
 		
+		assertEquals(uno, 2 );
+		assertEquals(listaDup.get(1).intValue(), 6 );
+	}
+	
+	@Test
+	public void testdup() {
+		List<Integer> listaDup = Funciones.duplicElemLista(miLista);
+
+		assertEquals(listaDup.get(0).intValue(), 2 );
+		assertEquals(listaDup.get(1).intValue(), 6 );
 	}
 }

@@ -1,7 +1,9 @@
 package lambdaExpresiones;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiFunction;
+import java.util.function.Function;
 
 public class Funciones {
 	
@@ -41,5 +43,27 @@ public class Funciones {
 	
 	public static int min(List<Integer> lista){
 		return operar((elem,elem2)-> elem < elem2 , lista);
+	}
+	
+	public static List<Integer> duplicar(List<Integer> lista){
+		List<Integer> resul = new ArrayList<>();
+		
+		for(int elem : lista)
+			resul.add(elem*2);
+		
+		return resul; 
+	}
+	
+	public static List<Integer> dup(Function<Integer, Integer> operacion,List<Integer> lista){
+		List<Integer> resul = new ArrayList<>();
+		
+		for(int elem : lista)
+			resul.add(operacion.apply(elem));
+		
+		return resul; 
+	}
+	
+	public static List<Integer> duplicElemLista(List<Integer> lista){
+		return dup(elem -> elem * 2, lista);
 	}
 }
