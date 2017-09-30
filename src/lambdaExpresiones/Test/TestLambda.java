@@ -40,5 +40,15 @@ public class TestLambda {
 	public void testMin() {
 		assertEquals(Funciones.min(miLista),1 );
 	}
-
+	
+	@Test
+	public void testListaVacia() {
+		List<Integer> vacia = new ArrayList<>();
+		
+		assertEquals(Funciones.min(vacia),0 );
+		assertEquals(Funciones.minimo(vacia),0 );
+		assertEquals(Funciones.max(vacia),0 );
+		assertEquals(Funciones.maximo(vacia),0 );
+		
+	}
 }
