@@ -116,4 +116,8 @@ public class Funciones {
 	public static int sumareduce(List<Integer> lista){
 		return lista.stream().reduce(0,(elem,elem2) -> elem + elem2);
 	}
+	
+	public static int operacionesLambda(List<Integer> lista){
+		return lista.stream().map(elem -> elem + 4).filter(elem -> elem > 7).reduce(0,(elem,elem2) -> elem + elem2);
+	}
 }

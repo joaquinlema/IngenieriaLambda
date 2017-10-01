@@ -147,4 +147,9 @@ public class TestLambda {
 		
 		assertEquals(6, Funciones.sumareduce(lista));
 	}
+	
+	@Test
+	public void testoperacionesLmabda() {
+		assertEquals(44, Funciones.operacionesLambda(miLista));
+	}
 }
