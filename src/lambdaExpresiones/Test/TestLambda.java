@@ -19,6 +19,10 @@ public class TestLambda {
 		miLista.add(3);
 		miLista.add(9);
 		miLista.add(5);
+		miLista.add(6);
+		miLista.add(8);
+		
+		
 	}
 	
 	@Test
@@ -66,5 +70,32 @@ public class TestLambda {
 
 		assertEquals(listaDup.get(0).intValue(), 2 );
 		assertEquals(listaDup.get(1).intValue(), 6 );
+	}
+	
+	@Test
+	public void testsuma() {
+		List<Integer> listaDup = Funciones.sumarElemLista(miLista);
+
+		assertEquals(listaDup.get(0).intValue(), 2 );
+		assertEquals(listaDup.get(1).intValue(), 4 );
+	}
+	
+	@Test
+	public void testpares() {
+		List<Integer> listaDup = Funciones.pares(miLista);
+
+		assertEquals(listaDup.get(0).intValue(), 6);
+		assertEquals(listaDup.get(1).intValue(), 8 );
+	}
+	
+	@Test
+	public void testmayores() {
+		List<Integer> listaDup = Funciones.mayores(miLista);
+
+		assertEquals(listaDup.get(0).intValue(), 9);
+		assertEquals(listaDup.get(1).intValue(), 5);
+		assertEquals(listaDup.get(2).intValue(), 6);
+		assertEquals(listaDup.get(3).intValue(), 8);
+		
 	}
 }

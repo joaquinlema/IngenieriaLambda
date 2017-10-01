@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class Funciones {
 	
@@ -65,5 +66,26 @@ public class Funciones {
 	
 	public static List<Integer> duplicElemLista(List<Integer> lista){
 		return dup(elem -> elem * 2, lista);
+	}
+	
+	public static List<Integer> sumarElemLista(List<Integer> lista){
+		return dup(elem -> elem + 1, lista);
+	}
+
+	public static List<Integer> damePares(Predicate<Integer> operacion,List<Integer> lista){
+		List<Integer> resul = new ArrayList<>();
+		for (int elem : lista) {
+			if (operacion.test(elem))
+				resul.add(elem);
+		}
+		return resul;
+	}
+	
+	public static List<Integer> pares(List<Integer> lista){
+		return damePares(elem -> elem % 2 == 0, lista);
+	}
+	
+	public static List<Integer> mayores(List<Integer> lista){
+		return damePares(elem -> elem >= 5, lista);
 	}
 }
