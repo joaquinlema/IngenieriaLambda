@@ -88,4 +88,32 @@ public class Funciones {
 	public static List<Integer> mayores(List<Integer> lista){
 		return damePares(elem -> elem >= 5, lista);
 	}
+
+	public static int sumar(List<Integer> lista){
+		int resultado = 0;
+		
+		for (Integer elem : lista) {
+			resultado = resultado + elem;
+		}
+		
+		return resultado;
+	}
+	
+	public static int multiplicar(List<Integer> lista){
+		int resultado = 1;
+		
+		for (Integer elem : lista) {
+			resultado = resultado * elem;
+		}
+		
+		return resultado;
+	}
+	
+	public static int multireduce(List<Integer> lista){
+		return lista.stream().reduce(1,(elem,elem2) -> elem * elem2);
+	}
+	
+	public static int sumareduce(List<Integer> lista){
+		return lista.stream().reduce(0,(elem,elem2) -> elem + elem2);
+	}
 }

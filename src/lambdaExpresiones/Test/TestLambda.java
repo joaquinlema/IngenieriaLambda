@@ -21,8 +21,6 @@ public class TestLambda {
 		miLista.add(5);
 		miLista.add(6);
 		miLista.add(8);
-		
-		
 	}
 	
 	@Test
@@ -97,5 +95,56 @@ public class TestLambda {
 		assertEquals(listaDup.get(2).intValue(), 6);
 		assertEquals(listaDup.get(3).intValue(), 8);
 		
+	}
+
+	@Test
+	public void testmultireduceVacio() {
+		List<Integer> lista = new ArrayList<>();
+		
+		assertEquals(1, Funciones.multireduce(lista));
+	}
+
+	
+	@Test
+	public void testmultireduceUnitario() {
+		List<Integer> lista = new ArrayList<>();
+		lista.add(1);
+		
+		assertEquals(1, Funciones.multireduce(lista));
+	}
+
+	@Test
+	public void testmultireduce() {
+		List<Integer> lista = new ArrayList<>();
+		lista.add(1);
+		lista.add(2);
+		lista.add(3);
+		
+		assertEquals(6, Funciones.multireduce(lista));
+	}
+	
+	@Test
+	public void testsumarreduceVacio() {
+		List<Integer> lista = new ArrayList<>();
+		
+		assertEquals(0, Funciones.sumareduce(lista));
+	}
+	
+	@Test
+	public void testsumarreduceUnitario() {
+		List<Integer> lista = new ArrayList<>();
+		lista.add(2);
+		
+		assertEquals(2, Funciones.sumareduce(lista));
+	}
+
+	@Test
+	public void testsumarreduce() {
+		List<Integer> lista = new ArrayList<>();
+		lista.add(1);
+		lista.add(2);
+		lista.add(3);
+		
+		assertEquals(6, Funciones.sumareduce(lista));
 	}
 }
